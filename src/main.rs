@@ -38,6 +38,10 @@ fn main() {
     ))
     .with_name("timer"); // PRO TIP
 
+    // theme setting
+
+    siv.load_toml(include_str!("theme.toml")).unwrap();
+
     // End of variables declarations.
 
     siv.add_layer(
