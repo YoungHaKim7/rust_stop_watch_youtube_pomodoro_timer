@@ -18,7 +18,7 @@ fn main() {
     // 25 min pomodoro duration
     let pomodoro_duration = Arc::new(Mutex::new(10 * 60));
     // 5 min break duration
-    let break_duration = Arc::new(Mutex::new(5 * 60));
+    let break_duration = Arc::new(Mutex::new(1 * 60));
     // Timer to countdown
     let timer_counter = Arc::new(Mutex::new(*pomodoro_duration.lock().unwrap()));
 
@@ -115,11 +115,11 @@ fn main() {
                 if *break_time {
                     *time_left = *pomodoro_duration.lock().unwrap();
                     *break_time = false;
-                    println!("Back to work!");
+                    println!("방송 시작합니다. Back to work!");
                 } else {
                     *time_left = *break_duration.lock().unwrap();
                     *break_time = true;
-                    println!("Take a break!");
+                    println!("곧 방송 시작합니다.Take a break!");
                 }
             }
         }
