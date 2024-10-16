@@ -15,9 +15,9 @@ fn main() {
     // Main cursive app
     let mut siv = Cursive::default();
     // Variable declarations
-    // 25 min pomodoro duration
+    // 10 min pomodoro duration
     let pomodoro_duration = Arc::new(Mutex::new(10 * 60));
-    // 5 min break duration
+    // 1 min break duration
     let break_duration = Arc::new(Mutex::new(1 * 60));
     // Timer to countdown
     let timer_counter = Arc::new(Mutex::new(*pomodoro_duration.lock().unwrap()));
